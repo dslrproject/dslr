@@ -120,7 +120,7 @@
 <head>
 	<title>DSLR</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="DSLR:Dyanmic to Static Lidar scan Reconstruction using adversarially trained autoencoder" />
+	<meta property="og:title" content="DSLR" />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
@@ -138,7 +138,7 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">DSLR:Dyanmic to Static Lidar scan Reconstruction</span>
+		<span style="font-size:24px">DSLR:Dyanmic to Static Lidar scan Reconstruction using adversarially trained autoencoder</span>
 		<table align=center width=600px>
 			<table align=center width=600px>
 				<tr>
@@ -202,18 +202,12 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+						<img class="round" style="width:500px" src="./resources/teaser_1.png"/>
 					</center>
 				</td>
 			</tr>
 		</table>
-		<table align=center width=850px>
-			<tr>
-				<td>
-					This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
-				</td>
-			</tr>
-		</table>
+		
 	</center>
 
 	<hr>
@@ -222,7 +216,7 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				This is my abstract.
+				Uncovering the static environment in presence of dynamic objects e.g vehicles, pedestrians, is essential for autonomous navigation. While this problem of dynamic to static translation (DST) has been recently explored for images and point cloud data, no work has been attempted to solve DST for LiDAR scans. We adapt non-LIDAR based DST methods and existing 3D reconstruction based methods for DST on LiDAR scan and show that they perform sub-optimally. We hypothesize that this poor performance can be attributed to the reasons that range image based models perform superior to point cloud based models and the adapted adversarial methods work directly on pixel/point space instead of latent space. To address the above challenges, we propose DSLR, which works on range image based LiDAR data and uses an adversarially trained auto encoder via an input pair based discriminator. DSLR uses an adversarial loss to learn DST mapping on latent space instead of range image space. DSLR is also the first solution for DST that generates static scan without using any segmentation information which is tedious to manually annotate for new environment. Additionally, we propose a novel data collection algorithm to extract corresponding static-dynamic pairs from random runs. DSLR gives state of the art performance on simulated and real world datasets and also shows at least 4x improvement on Chamfer distance. We demonstrate the potential of our results by showing that DSLR is the only practically viable model which has its reconstruction quality falling within the tolerable limits for autonomous navigation based downstream tasks like SLAM in dynamic environments
 			</td>
 		</tr>
 	</table>
