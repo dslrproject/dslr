@@ -1,6 +1,6 @@
-@inproceedings{author20XXtitle,
-  title={Please cite me},
-  author={Author, First and Author, Second and Author, Third},
-  booktitle={Conference},
-  year={20XX}
+@inproceedings{kumar2021dslr,
+  title={DSLR : Dynamic to Static LiDAR Scan ReconstructionUsing Adversarially Trained Autoencoder},
+  author=author={Kumar, Prashant and Sahoo, Sabyasachi and Shah, Vanshil and Kondameedi, Vineetha and Jain, Abhinav and Verma, Akshaj and Bhattacharyya, Chiranjib and V, Vinay},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2021}
 }
