@@ -28,13 +28,15 @@ parser.add_argument('--autoencoder',        type=int,   default=1,              
 parser.add_argument('--atlas_baseline',     type=int,   default=0,              help='If true, Atlas model used. Also determines the number of primitives used in the model')
 parser.add_argument('--panos_baseline',     type=int,   default=0,              help='If True, Model by Panos Achlioptas used')
 parser.add_argument('--kl_warmup_epochs',   type=int,   default=150,            help='number of epochs before fully enforcing the KL loss')
+parser.add_argument('--data',               type=str,   default='',             required = 'True , 'help='Location of the dataset')
 parser.add_argument('--debug', action='store_true')
 
 # --------------------------------------------------------------------------------------------
 args = parser.parse_args()
 maybe_create_dir(args.base_dir)
 print_and_save_args(args, args.base_dir)
-DATA = '/home/saby/Projects/ati/data/data/datasets/Carla/64beam-Data/pSysFinalSlicData/test/test'
+# DATA = '/home/saby/Projects/ati/data/data/datasets/Carla/64beam-Data/pSysFinalSlicData/test/test'
+DATA = args.data
 RUN_SAVE_PATH = "autoencoder_git_v1"
 maybe_create_dir(args.base_dir+RUN_SAVE_PATH)
 
