@@ -34,7 +34,9 @@ parser.add_argument('--output_layers',      type=int,   default=100,            
 parser.add_argument('--optimizer',                      default='adam',         help='optimizer to train with')
 parser.add_argument('--lr',                 type=float, default=0.0006,         help='learning rate')
 parser.add_argument('--beta1',              type=float, default=0.1,            help='momentum term for adam')
-parser.add_argument('--epochs',             type=int,   default=50,            help='number of epochs to train for')
+parser.add_argument('--epochs',             type=int,   default=50,             help='number of epochs to train for')
+parser.add_argument('--data',               type=str,   default='',             required = 'True , 'help='Location of the dataset')
+
 parser.add_argument('--debug', action='store_true')
 args = parser.parse_args()
 
@@ -44,7 +46,9 @@ writer = tensorboardX.SummaryWriter(log_dir=os.path.join(args.base_dir, DISCRIMI
 writes = 0
 ns     = 16
 alpha  = 10
-FILE_PATH = '/home/saby/Projects/ati/data/data/datasets/Carla/64beam-Data/pSysFinalSlicData/test/test'
+# FILE_PATH = '/home/saby/Projects/ati/data/data/datasets/Carla/64beam-Data/pSysFinalSlicData/test/test'
+
+FILE_PATH = args.data
 maybe_create_dir(args.base_dir+DISCRIMINATOR_RUN)
 
 #-----------------------------------------------------------------------------------------------
