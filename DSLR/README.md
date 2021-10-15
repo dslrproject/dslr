@@ -27,23 +27,25 @@ The steps to download the ARD-16 (Ati Realworld Dataset) paired correspondence d
 ## Training Example
 To start with trainig the model we need to train 3 modules. 
 1st Module: Autoencoder
- 
+```
 python autoencoer.py --data [all lidar scan in npy format made available in dataset seciton]
-
+```
 Use the "tensorbard --logdir runs" to visulaize the training.
 Choose an epoch at which the training loss plateaus and validation loss starts to increase. Take the weights from the 'runs' folder
 
 2nd Module : Discriminator
-
+```
 python discriminator.py --data [path to the corresponsing pair. Use the above location. The code handles the pairing]
-st-dy
+```
 The training saturates very fast for the discriminator. Keep a test [static dynamic pair] and test the model. Check if it classfies [st-st] pairs as ~1 and [st-dy] pairs as ~0.
 Use a specific epochs weights according to the check above.
 
 3rd Module: Adversarial Training
 Use the weights from the discriminator for the adversarial model:
 
+```
 python  adversarial_traning.py [path of corresponding pais. use the previous path]
+```
 Training saturates in the first 50 epochs. Check the tensorboard logs for details.
 
 The model output from here can be used for dynamic to static conversions: Test this model using the evaluation/testing code codel.
