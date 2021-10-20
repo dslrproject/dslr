@@ -51,9 +51,15 @@ Use the weights from the discriminator for the adversarial model:
 ```
 python  adversarial_traning.py [path of corresponding pais. use the previous path]
 ```
-Training saturates in the first 50 epochs. Check the tensorboard logs for details.
+Training saturates in the first 50 epochs. Check the tensorboard logs for details. Pick an epoch where the val and trainig error are both low.
 
 The model output from here can be used for dynamic to static conversions: Test this model using the evaluation/testing code codel.
+
+```
+python my_eval_save_file --data [location of the data] --ae_weights [weight of the final adversarial module]
+```
+Use the output weight from the adversarila module as the weights for the dynamic to static conversion weights: Pick a static-dynamic pair and use the below commands to retrieve the reconstructed output static using the adversarial model
+
 
 
 
