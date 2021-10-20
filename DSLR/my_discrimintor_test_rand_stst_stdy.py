@@ -6,35 +6,36 @@ import torch
 import sys
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader, Dataset
-from utils import * 
-from models import *
+from utils512 import * 
+from models512 import *
 import argparse
 import tqdm
 import random
 
 parser = argparse.ArgumentParser(description='VAE training of LiDAR')
 
-parser.add_argument('--batch_size',         type=int,   default=64,             help='size of minibatch used during training')
+parser.add_argument('--batch_size',         type=int,   default=128,             help='size of minibatch used during training')
 parser.add_argument('--use_selu',           type=int,   default=0,              help='replaces batch_norm + act with SELU')
 parser.add_argument('--base_dir',           type=str,   default='runs/test',    help='root of experiment directory')
-parser.add_argument('--no_polar',           type=int,   default=0,              help='if True, the representation used is (X,Y,Z), instead of (D, Z), where D=sqrt(X^2+Y^2)')
-parser.add_argument('--z_dim',              type=int,   default=128,            help='size of the bottleneck dimension in the VAE, or the latent noise size in GAN')
+parser.add_argument('--no_polar',           type=int,   default=1,              help='if True, the representation used is (X,Y,Z), instead of (D, Z), where D=sqrt(X^2+Y^2)')
+parser.add_argument('--z_dim',              type=int,   default=160,            help='size of the bottleneck dimension in the VAE, or the latent noise size in GAN')
 parser.add_argument('--autoencoder',        type=int,   default=1,              help='if True, we do not enforce the KL regularization cost in the VAE')
 parser.add_argument('--atlas_baseline',     type=int,   default=0,              help='If true, Atlas model used. Also determines the number of primitives used in the model')
 parser.add_argument('--panos_baseline',     type=int,   default=0,              help='If True, Model by Panos Achliargsas used')
 parser.add_argument('--kl_warmup_epochs',   type=int,   default=150,            help='number of epochs before fully enforcing the KL loss')
-parser.add_argument('--pose_dim',           type=int,   default=128,             help='size of the pose vector')
+parser.add_argument('--pose_dim',           type=int,   default=160,             help='size of the pose vector')
 parser.add_argument('--output_layers',      type=int,   default=100,            help='number of layers')
 parser.add_argument('--optimizer',                      default='adam',         help='optimizer to train with')
 parser.add_argument('--lr',                 type=float, default=0.002,          help='learning rate')
 parser.add_argument('--beta1',              type=float, default=0.5,            help='momentum term for adam')
+parser.add_argument('--data',               type=str,   default='',             required=True, help='Location of the data to train')
+#parser.add_argument('--temp',               type=float, default=0.01,           help='temperature for loss function')
+parser.add_argument('--ae_weight',          type=str,   default='',             required=True, help='Autoencoder weights for the discriminator')
 parser.add_argument('--epochs',             type=int,   default=10,             help='number of epochs to train for')
-parser.add_argument('--weights',            type=str,   default='',             requried=True help='location of the discrimintor weights to test with')
-
 parser.add_argument('--debug', action='store_true')
 args = parser.parse_args()
 
-
+FILE_PATH= args.data
 
 #-----------------------------------------------------------------------------------------------------------
 
@@ -222,22 +223,10 @@ model = VAE(args).cuda()
 # network=torch.load('/home/prashant/P/ATM/Code/lidar_generation/lidar_generation_exp/plsDoNotDel/runs/test/models/weightsOnFull100-184-st+dynamicBrokeInBetween/gen_1953.pth')
 # model.load_state_dict(network)
 
-network=torch.load(args.weights)
+network=torch.load(args.ae_weight)
 model.load_state_dict(network['state_dict_gen'])
 model.eval()
 print('---VAE Model Created and Loaded---')
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -267,15 +256,15 @@ print('---Loading the Testing Datset--')
 #casuing issues
 
 
-continous_val         = np.load('/home/prashant/Desktop/static_continous/16.npy')
-continous_val1        = np.load('/home/prashant/Desktop/static_continous/20.npy')
-pair_static_val       = np.load('/home/prashant/Desktop/purestatic/19.npy')
-pair_dynamic_val      = np.load('/home/prashant/Desktop/puredynamic/17.npy')
-
-continous_val         = preprocess(continous_val).astype('float32')
-continous_val1        = preprocess(continous_val1).astype('float32')
-pair_static_val       = preprocess(pair_static_val).astype('float32')
-pair_dynamic_val      = preprocess(pair_dynamic_val).astype('float32')
+continous_val         = np.load(FILE_PATH + 's/tests12.npy')[:,:,5:45,::2]
+continous_val1        = np.load(FILE_PATH + 's/tests13.npy')[:,:,5:45,::2]
+pair_static_val       = np.load(FILE_PATH + 's/tests14.npy')[:,:,5:45,::2]
+pair_dynamic_val      = np.load(FILE_PATH + 'd/testd14.npy')[:,:,5:45,::2]
+print("---Loaded---")
+#continous_val         = preprocess(continous_val).astype('float32')
+#continous_val1        = preprocess(continous_val1).astype('float32')
+#pair_static_val       = preprocess(pair_static_val).astype('float32')
+#pair_dynamic_val      = preprocess(pair_dynamic_val).astype('float32')
 
 val_data             = Pairdata(continous_val,continous_val1,pair_static_val,pair_dynamic_val)
 val_loader           = DataLoader(val_data, batch_size=args.batch_size, shuffle=False,drop_last=True)
@@ -291,7 +280,7 @@ def plot(out):
     x=random.randint(0,100)
     plt.figure()
     plt.hist(l, bins=10)
-    plt.savefig(str(x)+'.jpg')
+    plt.savefig(str(x)+'.png')
     plt.show()
 
 
