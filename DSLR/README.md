@@ -40,6 +40,11 @@ python discriminator.py --data [path to the corresponsing pair. Use the above lo
 The training saturates very fast for the discriminator. Keep a test [static dynamic pair] and test the model. Check if it classfies [st-st] pairs as ~1 and [st-dy] pairs as ~0.
 Use a specific epochs weights according to the check above.
 
+Test the discriminator weights using a separate test [static-dynamic pair] as below:
+```
+python my_discrimintor_test_rand_stst_stdy.py  [location of the discriminator weights]
+```
+
 3rd Module: Adversarial Training
 Use the weights from the discriminator for the adversarial model:
 

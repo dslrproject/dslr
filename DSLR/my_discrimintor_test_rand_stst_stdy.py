@@ -29,6 +29,8 @@ parser.add_argument('--optimizer',                      default='adam',         
 parser.add_argument('--lr',                 type=float, default=0.002,          help='learning rate')
 parser.add_argument('--beta1',              type=float, default=0.5,            help='momentum term for adam')
 parser.add_argument('--epochs',             type=int,   default=10,             help='number of epochs to train for')
+parser.add_argument('--weights',            type=str,   default='',             requried=True help='location of the discrimintor weights to test with')
+
 parser.add_argument('--debug', action='store_true')
 args = parser.parse_args()
 
@@ -220,7 +222,7 @@ model = VAE(args).cuda()
 # network=torch.load('/home/prashant/P/ATM/Code/lidar_generation/lidar_generation_exp/plsDoNotDel/runs/test/models/weightsOnFull100-184-st+dynamicBrokeInBetween/gen_1953.pth')
 # model.load_state_dict(network)
 
-network=torch.load('backUPtoHDD-track/dual_fw_stst_Stdy_random/gen_100.pth')
+network=torch.load(args.weights)
 model.load_state_dict(network['state_dict_gen'])
 model.eval()
 print('---VAE Model Created and Loaded---')
