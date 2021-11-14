@@ -2,7 +2,7 @@
 
 # DSLR: Dynamic to Static LiDAR Scan Reconstruction Using Adversarially Trained Autoencoder
 
-[[Project Page]](https://dslrproject.github.io/dslr/)[[AAAI 2021 Conference Paper]](https://arxiv.org/abs/2105.12774)[[Appendix]](https://drive.google.com/file/d/17_O46lNyFqbstTfqN377qX0NMJZAuD1e/view)
+[[Project Page]](https://dslrproject.github.io/dslr/)[[AAAI 2021 Conference Paper]](https://arxiv.org/abs/2105.12774)[[Appendix]](https://drive.google.com/file/d/17_O46lNyFqbstTfqN377qX0NMJZAuD1e/view)[[AAAI Presentation]](https://www.youtube.com/watch?v=Mi8DNw6F5Mk&ab_channel=PRASHANTKUMAR)
 
 PyTorch implementation of our supervised image-to-image translation method for Dynamic to Static Reconstruction of LiDAR scans. Our model called DSLR works on range image based LiDAR data and uses an adversarially trained auto encoder via an input pair based discriminator.
 
