@@ -20,6 +20,11 @@ cd DSLR/
   - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`
 
 ## Dataset
+
+For our training we used a subset of CARLA-64 dataset available in the DATASET section due to GPU limitations. The same set were used to report all the results. 
+It is encouraged to use all the dataset from (0-15) available and re-run our method on that dataset to get numbers using the whole dataset, if possible to get the numbers using all the datasets. 
+We will report the number on all the dataset in due course of time.
+
 The steps to download the ARD-16 (Ati Realworld Dataset) paired correspondence dataset have been mentioned in this [Readme](https://github.com/sabyasachis/temp-dslr-repo/blob/main/Data_Generation/README.md)
 
 
