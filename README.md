@@ -57,3 +57,5 @@ Note that the test result were calculated on the first 1024 samples only for eac
 | 14      |      2.57        |
 | 15      |      1.37        |
 
+##Acknowledgements
+Code heavily inspired from [Deep Generative Modeling of LiDAR Data](https://github.com/pclucas14/lidar_generation)
