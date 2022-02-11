@@ -42,4 +42,18 @@ All the data has been uploaded to kaggle servers. Please refer to "Data" folder 
 
 ## Update: Results for DSLR on our new CARLA-64 simulated dataset
 This dataset has more samples to train on and has  additional 8 lidar data blocks(each consisting of 1024 scans) for rigorous testing.
+The link for the dataset is updated in the DATA section. 
+Training was done using corresponding static-dynamic pair 0-7.
+Testing was done on 7 dataset that belong to differnet scenes in the CARLA simulator, to gauge the behaviour of our model.
+Model is given input as the dynamic frame (eg d9.npy) and the recosntruction is tested against s9.npy The index column denotes the same.
+Note that the test result were calculated on the first 1024 samples only for each of the index data block due to memory constraints.
+
+| Index   | Chamfer Distance |
+| ------- | ---------------- |
+|  9      |      1.57        |
+| 10      |      1.24        |
+| 12      |      8.44        |
+| 13      |      1.04        |
+| 14      |      2.57        |
+| 15      |      1.37        |
 
