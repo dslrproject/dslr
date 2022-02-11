@@ -39,3 +39,7 @@ This repository has been divided into the following folders:
 
 All the data has been uploaded to kaggle servers. Please refer to "Data" folder for more information.
 
+
+## Update: Results for DSLR on our new CARLA-64 simulated dataset
+This dataset has more samples to train on and has  additional 8 lidar data blocks(each consisting of 1024 scans) for rigorous testing.
+
