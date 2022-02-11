@@ -50,8 +50,9 @@ Note that the test result were calculated on the first 1024 samples only for eac
 
 | Index   | Chamfer Distance |
 | ------- | ---------------- |
-|  9      |      1.57        |
-| 10      |      1.24        |
+|  9      |      1.33        |
+  10      |      1.57        |
+| 11      |      1.24        |
 | 12      |      8.44        |
 | 13      |      1.04        |
 | 14      |      2.57        |
