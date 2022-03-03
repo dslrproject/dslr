@@ -58,5 +58,15 @@ Note that the test result were calculated on the first 1024 samples only for eac
 | 14      |      2.57        |
 | 15      |      1.37        |
 
+
+
+Similarly, we release results for the sparse ARD-16 datasets on new differnet runs below:
+| Index  | Chamfer Distance |
+| -------| ---------------- |
+| 0      |      0.32        |
+| 1      |      0.33        |
+| 2      |      0.32        |
+| 3      |      0.38        |
+
 ## Acknowledgements
 Code heavily inspired from [Deep Generative Modeling of LiDAR Data](https://github.com/pclucas14/lidar_generation)
