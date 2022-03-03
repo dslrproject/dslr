@@ -6,7 +6,7 @@
 
 PyTorch implementation of our supervised image-to-image translation method for Dynamic to Static Reconstruction of LiDAR scans. Our model called DSLR works on range image based LiDAR data and uses an adversarially trained auto encoder via an input pair based discriminator.
 
-Contact: Sabyasachi Sahoo (iamsabyasachisahoo@gmail.com) and Prashant Kumar(email)
+Contact: Sabyasachi Sahoo (iamsabyasachisahoo@gmail.com) and Prashant Kumar(prshnttkmr@gmail.com)
 
 ## License
 Copyright (c) 2021, Prashant Kumar, Sabyasachi Sahoo, Vanshil Shah, Vineetha Kondameedi, Abhinav Jain, Akshaj Verma, Chiranjib Bhattacharyya, Vinay V. All rights reserved under the [GNU General Public License v3.0
