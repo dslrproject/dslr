@@ -41,7 +41,8 @@ All the data has been uploaded to kaggle servers. Please refer to "Data" folder 
 
 
 ## Update: Results for DSLR on our new CARLA-64 simulated dataset
-This dataset has more samples to train on and has  additional 8 lidar data blocks(each consisting of 1024 scans) for rigorous testing.
+This dataset has more samples to train on and has  additional 8 lidar data blocks(each consisting of 2048 scans) for rigorous testing.
+Note that these differnet data blocks correspond to differnet semantics(scenes, vehicles, pedestriasn) that were visible across the dataset.
 The link for the dataset is updated in the DATA section. 
 Training was done using corresponding static-dynamic pair 0-7.
 Testing was done on 7 dataset that belong to differnet scenes in the CARLA simulator, to gauge the behaviour of our model.
