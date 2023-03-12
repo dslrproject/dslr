@@ -57,7 +57,7 @@ Note that the test result were calculated on the first 1024 samples only for eac
 | 12      |      8.44        |
 | 13      |      1.04        |
 | 14      |      2.57        |
-| 15      |      1.37        |
+
 
 
 Similarly, for ATI dataset we release a new single testing run, that combines all the scenes observes by the existing 6 testing runs, is more longer and has more loops compared to the previous testing runs.
