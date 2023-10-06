@@ -10,5 +10,8 @@ Please download the dataset from the following kaggle links:
      - [[Static-raw]](https://www.kaggle.com/ssahoodotinfinity/carla64-static-lidar-dataset) (47 GB)
    - Processed : These contain only the preprocessed data, ready to be fed to DSLR model for training/testing
      - [[Paired Preprocessed Range Images]](https://www.kaggle.com/ssahoodotinfinity/carla64-preprocessed-range-image-dataset) (16 GB)
- - ARD-16 Dataset : These contain all the data collected (and processed to have similar folder layout) on a moving robot
-   - [[Dynamic and Static]](https://www.kaggle.com/ssahoodotinfinity/ard16-dynamic-static-lidar-dataset) (21 GB)
+   - CARLA SLAM Odometery Sequences
+     - 
+ - ARD-16 Dataset : These contain all the data collected (and processed) on a moving robot.
+ -  This sequene is used for SLAM
+   - [[Dynamic and Static-Raw]](https://www.kaggle.com/ssahoodotinfinity/ard16-dynamic-static-lidar-dataset) (21 GB)
