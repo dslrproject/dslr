@@ -61,11 +61,8 @@ Note that the test result were calculated on the first 1024 samples only for eac
 
 
 
-Similarly, for ATI dataset we release a new single testing run, that combines all the scenes observes by the existing 6 testing runs, is more longer and has more loops compared to the previous testing runs. The same is updated in the Kaggle dataset link updated in the dataset folder.
-Similarly, we release results for the sparse ARD-16 datasets on the test run:
- | Chamfer Distance |
- | ---------------- |
- |     0.3375       |  
+Similarly, for ATI dataset we release a new single run, that combines all the scenes observes by the existing 6 testing runs, is more longer and has more loops compared to the previous testing runs. The same is updated in the Kaggle dataset link updated in the dataset folder. The breakdown of this into training, validation and testing sets for models is also available at the Kaggle link - [ARD-16](https://www.kaggle.com/datasets/ssahoodotinfinity/ard16-dynamic-static-lidar-dataset)
+   
 
 
 ## Acknowledgements
